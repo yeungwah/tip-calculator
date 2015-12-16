@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        billField.becomeFirstResponder();
+        print(self.billField.becomeFirstResponder());
         stepper.value = 1;
         stepper.autorepeat = true;
         stepper.minimumValue = 1;

@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         date = NSDate();
         newDate = calendar.dateByAddingUnit(
             .Minute, // adding hours
-            value: 2, // adding two hours
+            value: 1, // adding two hours
             toDate: date!,
             options: [ ]
         );
@@ -52,6 +52,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 if viewController.isKindOfClass(ViewController) {
                     myViewController = viewController as! ViewController
                     myViewController.billField.text = ""
+                    myViewController.tipLabel.text = ""
+                    myViewController.totalLabel.text = ""
+                    myViewController.perPersonLabel.text = ""
                     print("Found the view controller")
                 }
             }
