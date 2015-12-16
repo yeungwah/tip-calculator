@@ -14,6 +14,7 @@
 		3F8CCFED1C1E4B4400478AB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F8CCFEB1C1E4B4400478AB9 /* LaunchScreen.storyboard */; };
 		3F8CCFF81C1E4B4400478AB9 /* tipsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8CCFF71C1E4B4400478AB9 /* tipsTests.swift */; };
 		3F8CD0031C1E4B4500478AB9 /* tipsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8CD0021C1E4B4500478AB9 /* tipsUITests.swift */; };
+		3F8CD0111C1E69B700478AB9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8CD0101C1E69B700478AB9 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		3F8CCFFE1C1E4B4500478AB9 /* tipsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tipsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F8CD0021C1E4B4500478AB9 /* tipsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tipsUITests.swift; sourceTree = "<group>"; };
 		3F8CD0041C1E4B4500478AB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F8CD0101C1E69B700478AB9 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +99,9 @@
 		3F8CCFE11C1E4B4400478AB9 /* tips */ = {
 			isa = PBXGroup;
 			children = (
-				3F8CCFE21C1E4B4400478AB9 /* AppDelegate.swift */,
+				3F8CD0101C1E69B700478AB9 /* SettingsViewController.swift */,
 				3F8CCFE41C1E4B4400478AB9 /* ViewController.swift */,
+				3F8CCFE21C1E4B4400478AB9 /* AppDelegate.swift */,
 				3F8CCFE61C1E4B4400478AB9 /* Main.storyboard */,
 				3F8CCFE91C1E4B4400478AB9 /* Assets.xcassets */,
 				3F8CCFEB1C1E4B4400478AB9 /* LaunchScreen.storyboard */,
@@ -258,6 +261,7 @@
 			files = (
 				3F8CCFE51C1E4B4400478AB9 /* ViewController.swift in Sources */,
 				3F8CCFE31C1E4B4400478AB9 /* AppDelegate.swift in Sources */,
+				3F8CD0111C1E69B700478AB9 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
