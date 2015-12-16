@@ -22,7 +22,7 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- Calculate amount for each person
+* [x] Calculate amount for each person
 
 ## Video Walkthrough 
 
