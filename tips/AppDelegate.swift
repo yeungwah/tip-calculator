@@ -27,8 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         date = NSDate();
         newDate = calendar.dateByAddingUnit(
-            .Second, // adding hours
-            value: 1, // adding two hours
+            .Second, // can change to any times
+            value: 1,
             toDate: date!,
             options: [ ]
         );
