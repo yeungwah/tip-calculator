@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         date = NSDate();
         newDate = calendar.dateByAddingUnit(
-            .Minute, // adding hours
+            .Second, // adding hours
             value: 1, // adding two hours
             toDate: date!,
             options: [ ]
@@ -43,23 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-        date = NSDate()
-        if date!.compare(newDate!) == NSComparisonResult.OrderedDescending
-        {
-        var myViewController : ViewController!
-        if let viewControllers = self.window?.rootViewController?.childViewControllers {
-            for viewController in viewControllers {
-                if viewController.isKindOfClass(ViewController) {
-                    myViewController = viewController as! ViewController
-                    myViewController.billField.text = ""
-                    myViewController.tipLabel.text = ""
-                    myViewController.totalLabel.text = ""
-                    myViewController.perPersonLabel.text = ""
-                    print("Found the view controller")
-                }
-            }
-        }
-        }
+        
         
         print("will enter foreground");
     }
@@ -71,7 +55,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        let defaults = NSUserDefaults.standardUserDefaults();
         print("become terminate");
+                date = NSDate()
+        if date!.compare(newDate!) == NSComparisonResult.OrderedDescending
+        {
+            var myViewController : ViewController!
+            if let viewControllers = self.window?.rootViewController?.childViewControllers {
+                for viewController in viewControllers {
+                    if viewController.isKindOfClass(ViewController) {
+                        myViewController = viewController as! ViewController
+                        defaults.setInteger(1, forKey: "firstRun");
+                        defaults.setObject(myViewController.billField.text, forKey: "billField");
+                        defaults.setObject(myViewController.tipLabel.text, forKey: "tipLabel");
+                        defaults.setObject(myViewController.totalLabel.text, forKey: "totalLabel");
+                        defaults.setObject(myViewController.perPersonLabel.text, forKey: "perPersonLabel");
+                        defaults.setObject(myViewController.peopleLabel.text, forKey: "peopleLabel");
+                        defaults.synchronize();
+                        print("Found the view controller")
+                    }
+                }
+            }
+        }
+        
     }
 
 

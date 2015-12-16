@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var billField: UITextField!
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
@@ -21,12 +21,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        print(self.billField.becomeFirstResponder());
+        self.billField.becomeFirstResponder();
         stepper.value = 1;
         stepper.autorepeat = true;
         stepper.minimumValue = 1;
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -36,6 +36,24 @@ class ViewController: UIViewController {
         print("view will appear")
         let defaults = NSUserDefaults.standardUserDefaults();
         let position = defaults.integerForKey("defaultTip");
+        let flag = defaults.integerForKey("firstRun");
+        
+        if (flag == 1){
+            let getBillField = defaults.objectForKey("billField")
+            let getTipLabel = defaults.objectForKey("tipLabel")
+            let getTotalLabel = defaults.objectForKey("totalLabel")
+            let getPerPersonLabel = defaults.objectForKey("perPersonLabel")
+            let getPeopleLabel = defaults.objectForKey("peopleLabel");
+            billField.text = getBillField?.description;
+            tipLabel.text = getTipLabel?.description;
+            totalLabel.text = getTotalLabel?.description;
+            perPersonLabel.text = getPerPersonLabel?.description;
+            peopleLabel.text = getPeopleLabel?.description;
+            stepper.value = Double(peopleLabel.text!)!;
+            defaults.setInteger(0, forKey: "firstRun");
+            defaults.synchronize();
+        }
+        
         print("selected position \(position)");
         tipControl.selectedSegmentIndex = position;
     }
@@ -54,7 +72,7 @@ class ViewController: UIViewController {
         super.viewDidDisappear(animated)
         print("view did disappear")
     }
-
+    
     @IBAction func onEditingChanged(sender: AnyObject) {
         calculateResult();
         
@@ -81,6 +99,6 @@ class ViewController: UIViewController {
         totalLabel.text = formatter.stringFromNumber(total);
         tipLabel.text = formatter.stringFromNumber(tip);
     }
-
+    
 }
 
